@@ -15,7 +15,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe 7
+    result.isLastBankingDayOfMonth shouldBe true
     result.type shouldBe DayType.BANKING_DAY
   }
 
@@ -26,7 +26,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -37,7 +37,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe 7
+    result.isLastBankingDayOfMonth shouldBe true
     result.type shouldBe DayType.BANKING_DAY
   }
 
@@ -48,7 +48,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.BANKING_DAY
   }
 
@@ -59,7 +59,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe 12
+    result.isLastBankingDayOfMonth shouldBe true
     result.type shouldBe DayType.BANKING_DAY
   }
 
@@ -70,7 +70,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 
@@ -81,7 +81,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 
@@ -92,7 +92,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -103,7 +103,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -114,7 +114,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -125,7 +125,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -136,7 +136,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 
@@ -147,7 +147,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 
@@ -158,7 +158,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -169,7 +169,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 
@@ -180,7 +180,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe 3
+    result.isLastBankingDayOfMonth shouldBe true
     result.type shouldBe DayType.BANKING_DAY
   }
 
@@ -191,7 +191,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 
@@ -202,7 +202,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -213,7 +213,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -224,7 +224,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 
@@ -235,7 +235,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 
@@ -246,7 +246,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.WEEKEND
   }
 
@@ -257,7 +257,7 @@ class DateInfoGeneratorTest {
     val result = underTest.generate(date, date).findFirst().get()
 
     result.date shouldBe date
-    result.lastBankingDayOfMonth shouldBe null
+    result.isLastBankingDayOfMonth shouldBe false
     result.type shouldBe DayType.HOLIDAY
   }
 }

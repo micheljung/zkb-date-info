@@ -17,22 +17,19 @@ class DateInfoGenerator {
 
     return from.datesUntil(to.plusDays(1)).map {
       if (isWeekend(it)) {
-        return@map DateInfo(it, DayType.WEEKEND)
+        return@map DateInfo(it, DayType.WEEKEND, false)
       }
 
       val isHoliday = holidays[it] != null
       if (isHoliday) {
-        return@map DateInfo(it, DayType.HOLIDAY)
+        return@map DateInfo(it, DayType.HOLIDAY, false)
       }
 
-      val lastBankingDayOfMonth = determineBankingDayOfMonth(it, isHoliday)
+      val isLastBankingDayOfMonth = isLastBankingDayOfMonth(it, isHoliday)
 
-      DateInfo(it, DayType.BANKING_DAY, lastBankingDayOfMonth)
+      DateInfo(it, DayType.BANKING_DAY, isLastBankingDayOfMonth)
     }
   }
-
-  private fun determineBankingDayOfMonth(date: LocalDate, isHoliday: Boolean): Int? =
-    if (isLastBankingDayOfMonth(date, isHoliday)) date.monthValue else null
 
   private fun isLastBankingDayOfMonth(date: LocalDate, isHoliday: Boolean) =
     !isHoliday && isThereAnyBankingDayUntilMonthEndAfter(date)
